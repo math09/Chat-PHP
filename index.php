@@ -1,4 +1,11 @@
 <?php
+var_dump(
+    getenv("MARIADB_HOST"),
+    getenv("MARIADB_DATABASE"),
+    getenv("MARIADB_USER"),
+    getenv("MARIADB_PASSWORD")
+);
+exit;
 // Configuration de la connexion à la base de données
 $dsn = 'mysql:host='.getenv("MARIADB_HOST").';dbname='.getenv("MARIADB_DATABASE").'';
 $username = getenv("MARIADB_USER");
