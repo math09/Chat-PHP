@@ -1,5 +1,5 @@
 <?php
-// Configuration de la connexion à la base de données
+// Configuration de la connexion à la base de données test
 $dsn = 'mysql:host='.getenv("MARIADB_HOST").';dbname='.getenv("MARIADB_DATABASE").'';
 $username = getenv("MARIADB_USER");
 $password = getenv("MARIADB_PASSWORD");
