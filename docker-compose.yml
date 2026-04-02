@@ -15,15 +15,15 @@ services:
 
   db:
     image: mariadb:11
-    command: --bind-address=0.0.0.0
     environment:
       MARIADB_ROOT_PASSWORD: rootpassword
       MARIADB_DATABASE: chat
       MARIADB_USER: chat_user
       MARIADB_PASSWORD: chat_password
+      MARIADB_USER_HOST: "%"
     volumes:
-      - db_data:/var/lib/mysql
+      - db_data_v2:/var/lib/mysql
       - ./web.sql:/docker-entrypoint-initdb.d/web.sql:ro
 
 volumes:
-  db_data:
+  db_data_v2:
