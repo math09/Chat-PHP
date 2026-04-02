@@ -1,15 +1,13 @@
-CREATE DATABASE IF NOT EXISTS chat;
-CREATE USER IF NOT EXISTS 'chat_user'@'%' IDENTIFIED BY 'chat_password';
-ALTER USER 'chat_user'@'%' IDENTIFIED BY 'chat_password';
-GRANT ALL PRIVILEGES ON chat.* TO 'chat_user'@'%';
-FLUSH PRIVILEGES;
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-USE chat;
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
 
-CREATE TABLE IF NOT EXISTS messages (
-  id INT(11) NOT NULL AUTO_INCREMENT,
-  username VARCHAR(50) NOT NULL,
-  message TEXT NOT NULL,
-  created_at TIMESTAMP NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (id)
-);
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
