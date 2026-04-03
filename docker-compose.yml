@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   app:
     build:
@@ -22,8 +24,8 @@ services:
       MARIADB_PASSWORD: chat_password
       MARIADB_USER_HOST: "%"
     volumes:
-      - db_data_v8:/var/lib/mysql
-      - ./init-messages.sh:/docker-entrypoint-initdb.d/init-messages.sh:ro
+      - db_data9:/var/lib/mysql
+      - ./web.sql:/docker-entrypoint-initdb.d/web.sql:ro
 
 volumes:
-  db_data_v8:
+  db_data9:
