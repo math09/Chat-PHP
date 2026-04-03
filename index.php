@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['username']) && !empty
                 <label for="message">Message :</label>
                 <textarea id="message" name="message" class="form-control" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <button type="submit" class="btn btn-danger">Envoyer</button>
         </form>
         <div id="messages">
             <?php
